@@ -1,0 +1,10 @@
+#[osx]
+.DS_Store
+
+#[python]
+.python-version
+.venv
+build/*
+dist/*
+*.egg-info
+*.pyc
