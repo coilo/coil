@@ -1,6 +1,16 @@
 Coil
 ======
 
+.. image:: https://travis-ci.org/coilo/coil.svg?branch=master
+    :target: https://travis-ci.org/coilo/coil
+    :alt: Build Status
+.. image:: https://coveralls.io/repos/coilo/coil/badge.svg
+    :target: https://coveralls.io/r/coilo/coil
+    :alt: Coverage Status
+.. image:: https://gemnasium.com/coilo/coil.svg
+    :target: https://gemnasium.com/coilo/coil
+    :alt: Dependency Status
+
 Coil is a Scheme interpreter written in Python.
 
 License

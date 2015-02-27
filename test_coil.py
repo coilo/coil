@@ -13,5 +13,10 @@ class CoilTest(unittest.TestCase):
 
         self.assertEqual(15.0, coil.Coil(code).run())
 
+def suite():
+    suite = unittest.TestSuite()
+    suite.addTests(unittest.makeSuite(CoilTest))
+    return suite
+
 if __name__ == "__main__":
     unittest.main()
