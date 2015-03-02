@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 
 from .symbol import Symbol
+from .exception import CoilSyntaxError, CoilRuntimeError
 
 
 class Scheme(object):
@@ -49,7 +50,7 @@ class Scheme(object):
     def __symbolize(cls, token, tokenizer):
 
         """ """
-        if(token == '('):
+        if token == '(':
             lists = []
             while True:
                 next_token = next(tokenizer)
@@ -57,6 +58,8 @@ class Scheme(object):
                     return lists
                 else:
                     lists.append(cls.__symbolize(next_token, tokenizer))
+        elif token == ')':
+            raise CoilSyntaxError("syntax error, unexpected ')'")
         else:
             return cls.__atom(token)
 
