@@ -63,6 +63,8 @@ class Scheme(object):
     """ """
     @classmethod
     def __atom(cls, token):
+        if token == '#t' or token == '#f':
+            return True if token == '#t' else False
         if token.isnumeric():
             return float(token)
         else:
