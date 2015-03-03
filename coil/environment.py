@@ -19,7 +19,17 @@ class Environment(dict):
 
     @classmethod
     def namespace(cls):
+
+        """ """
+        def assertion(variable):
+            assert variable
+
+        """ """
+        def assertion_equals(expected, actual):
+            assert (expected == actual)
+
         environment = Environment()
+
 
         """ """
         environment.update({
@@ -35,6 +45,8 @@ class Environment(dict):
             'not': operator.not_,
             'cons': lambda x, y: [x] + y,
             'car': lambda x: x[0],
-            'cdr': lambda x: x[1:]
+            'cdr': lambda x: x[1:],
+            'assert': lambda x: assertion(x),
+            'assert-equal': lambda x, y: assertion_equals(x, y)
         })
         return environment

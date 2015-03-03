@@ -17,5 +17,4 @@ class Coil(object):
         tokenizer = Tokenizer(self.reader).tokenizer()
 
         ##
-        a = Scheme.evaluate(Scheme.pause(tokenizer), Environment.namespace())
-        return a
+        return Scheme.evaluate(Scheme.pause(tokenizer), Environment.namespace())
