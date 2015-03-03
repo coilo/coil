@@ -30,7 +30,6 @@ class Environment(dict):
 
         environment = Environment()
 
-
         """ """
         environment.update({
             '+': operator.add,

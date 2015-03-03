@@ -13,6 +13,12 @@ class CoilTest(unittest.TestCase):
 
                 """ """
                 coil.Coil(code).run()
+    def testBoolean(self):
+        with open('scheme/boolean.scm') as f:
+            for code in f.readlines():
+
+                """ """
+                coil.Coil(code).run()
 
 def suite():
     suite = unittest.TestSuite()
