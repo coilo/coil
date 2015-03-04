@@ -4,6 +4,7 @@ import io
 
 from .tokenizer import Tokenizer
 from .environment import Environment
+from .exception import CoilSyntaxError, CoilRuntimeError
 from .scheme import Scheme
 
 
