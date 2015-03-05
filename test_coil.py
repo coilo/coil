@@ -23,6 +23,15 @@ class CoilTest(unittest.TestCase):
                 """ """
                 coil.Coil(code).run()
 
+    def testConditionals(self):
+
+        """ Coil#run testcase. """
+        with open('scheme/conditionals.scm') as f:
+            for code in f.readlines():
+
+                """ """
+                coil.Coil(code).run()
+
     def testSyntaxError(self):
 
         """  Coil#run testcase. """
