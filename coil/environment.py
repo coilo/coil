@@ -45,6 +45,7 @@ class Environment(dict):
             'cons': lambda x, y: [x] + y,
             'car': lambda x: x[0],
             'cdr': lambda x: x[1:],
+            'boolean?': lambda x: isinstance(x, bool),
             'assert': lambda x: assertion(x),
             'assert-equal': lambda x, y: assertion_equals(x, y)
         })
