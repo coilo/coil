@@ -17,6 +17,8 @@ class Scheme(object):
 
     @classmethod
     def evaluate(cls, token, environment):
+
+        """ """
         if isinstance(token, Symbol):
             return environment.find(token)[token]
         elif not isinstance(token, list):
@@ -45,7 +47,6 @@ class Scheme(object):
             proc = exps.pop(0)
             return proc(*exps)
 
-    """ """
     @classmethod
     def __symbolize(cls, token, tokenizer):
 
@@ -63,9 +64,10 @@ class Scheme(object):
         else:
             return cls.__atom(token)
 
-    """ """
     @classmethod
     def __atom(cls, token):
+
+        """ """
         if token == '#t' or token == '#f':
             return True if token == '#t' else False
         if token.isnumeric():
@@ -73,9 +75,21 @@ class Scheme(object):
         else:
             return cls.__symbol(token)
 
-    """ """
+    @classmethod
+    def __format(cls, atom):
+
+        """ """
+        if atom is True or atom is False:
+            return '#t' if atom is True else '#f'
+        elif isinstance(atom, Symbol):
+            return atom
+        else:
+            return str(atom)
+
     @classmethod
     def __symbol(cls, token):
+
+        """ """
         if token not in cls.symbol_tables:
             cls.symbol_tables[token] = Symbol(token)
         return cls.symbol_tables[token]
